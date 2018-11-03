@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import { connect, Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter } from 'react-router-dom';
+
 import { routerReducer, routerMiddleware, push, ConnectedRouter  } from 'react-router-redux';
 
 
@@ -62,7 +64,7 @@ const Users = () => <h2>Users</h2>;
 
 const RoutedPage = () =>  {
 	return (
-		<Router  history={history}>
+		<BrowserRouter  history={history}>
 		    <div>
 		      <nav>
 		        <ul>
@@ -77,12 +79,11 @@ const RoutedPage = () =>  {
 		          </li>
 		        </ul>
 		      </nav>
-
 		      <Route path="/" exact component={HomePage} />
 		      <Route path="/about/" component={About} />
 		      <Route path="/users/" component={Users} />
 		    </div>
-		</Router>
+		</BrowserRouter>
 	)
 };
 

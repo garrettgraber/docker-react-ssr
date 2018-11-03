@@ -13,8 +13,8 @@ const http = require('http'),
 
 
 const port = 8082;
-const hostname = 'localhost';
-// const hostname = ip.address();
+// const hostname = 'localhost';
+const hostname = ip.address();
 const app = express();
 
 

@@ -1,3 +1,6 @@
+'use strict';
+
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -135,7 +138,8 @@ module.exports = [
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/,
+          // test: /\.(js|jsx)$/,
+          test: /\.js[x]?$/,
           exclude: /(node_modules|bower_components)/,
           use: ['babel-loader'],
           include: srcPath

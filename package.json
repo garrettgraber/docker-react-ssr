@@ -16,11 +16,13 @@
       "@babel/preset-env",
       "@babel/preset-react"
     ],
-    "plugins": ["react-hot-loader/babel"]
+    "plugins": [
+      "react-hot-loader/babel"
+    ]
   },
   "scripts": {
     "babel": "babel src -d dist",
-    "server:webpack": "cross-env NODE_ENV=webpack webpack-dev-server --config webpack.config.babel.js  --mode development --port 8082",
+    "server:webpack": "cross-env NODE_ENV=webpack webpack-dev-server --config webpack.config.babel.js --host 0.0.0.0 --mode development --port 8082",
     "server:dev": "cross-env NODE_ENV=development nodemon --watch ./static-server/server.js ./static-server/index.js ",
     "server:prod": "cross-env NODE_ENV=production nodemon --watch ./ssr-server/exprss-server.js ./ssr-server/index.js",
     "start:prod": "npm run build:prod && npm run server:prod",
@@ -38,6 +40,7 @@
     "cors": "^2.8.4",
     "express": "^4.16.4",
     "ip": "^1.1.5",
+    "isomorphic-fetch": "^2.2.1",
     "query-string": "^6.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",

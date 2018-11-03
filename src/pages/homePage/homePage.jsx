@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 console.log("Home Page is running");
 
 
-const  bannerColorLists = ['red', 'lime', 'teal', '#E9CCB1'];
+const  bannerColorLists = ['red', 'lime', 'teal', '#E9CCB1', 'gold', 'crimson'];
 
 
 class HomePage extends React.Component {

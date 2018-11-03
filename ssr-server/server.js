@@ -1,14 +1,31 @@
 const React = require('react');
 const renderToString = require('react-dom/server').renderToString;
 
+// import { renderToString } from "react-dom/server"
+
+
+
+const ReactDOMServer = require('react-dom/server');
+
+
 console.log("Server middleware is running...");
 
 const App = require('../src/components/app.jsx').default;
+const StaticRouter = require('react-router-dom').StaticRouter;
+const Template = require('./template.jsx');
+
+
+// const StaticRouterMarkup = (req, context) => {
+//     return (<App />);
+// };
+
 
 module.exports = function serverRenderer(req, res,  next) {
     console.log("Server side render has occurred.");
 
     return (req, res, next) => {
+        const context = {};
+
         res.status(200).send(`
             <!doctype html>
             <html lang="en">
@@ -28,6 +45,13 @@ module.exports = function serverRenderer(req, res,  next) {
               </body>
             </html>
         `);
+
+
+        // const markup = renderToString(StaticRouterMarkup());
+
+        // res.status(200).send(Template({
+        //     markup: markup,
+        // }));
         next();
     };
-}
+};

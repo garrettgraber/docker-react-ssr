@@ -16,7 +16,7 @@ const http = require('http'),
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 const port = 8082;
-const hostname = 'localhost';
+const hostname = ip.address();
 const buildPath = path.resolve('../dist');
 const bundlePath = path.resolve('../dist/index.html');
 
